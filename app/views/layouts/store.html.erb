@@ -1,0 +1,23 @@
+<html>
+	<head>
+ 		<title>Pragprog Books Online Store</title>
+		<%= stylesheet_link_tag "depot", :media => "all" %>
+	</head>
+	<body>
+		<div id="banner">
+			<%= image_tag "Firefox_wallpaper.png", size: "50"%> 
+			<%= @page_title || "Pragmatic Bookshelf" %> 
+		</div>
+ 		<div id="columns">
+ 			<div id="side">
+ 				<a href="http://www....">Home</a><br />
+ 				<a href="http://www..../faq">Questions</a><br />
+				<a href="http://www..../news">News</a><br />
+				<a href="http://www..../contact">Contact</a><br />
+			</div>
+			<div id="main">
+				<%= yield %>
+			</div>
+		</div>
+	</body>
+</html>

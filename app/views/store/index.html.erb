@@ -1,20 +1,16 @@
-<table cellpadding="5" cellspacing="0">
+
 <% for product in @products %>
-	<tr valign="top">
-		<td>
-			<%=image_tag(product.image_url, size: "50", alt: "Missing image", class: "product_image")%>
-		</td>
-		<td width="450">
-			<h3><%=h product.title %></h3>
-			<small>
-				<%= product.description %>
-			</small>
-			<br/>
-			<strong>$<%= sprintf("%0.2f", product.price) %></strong>
-			<%= link_to 'Add to Cart', '#', :id => product %>
-			<br/>
-		</td>
-	</tr>
-	<tr><td colspan="2"><hr/></td></tr>
+	<div class = "catalogentry">
+		<%=image_tag(product.image_url, size: "50", alt: "Missing image", class: "product_image")%>
+		<h3><%=h product.title %></h3>
+		<small>
+			<%= product.description %>
+		</small>
+		<br/>
+		<strong>$<%= sprintf("%0.2f", product.price) %></strong>
+		<%= link_to 'Add to Cart', '#', :id => product %>
+		<br/>
+	</div>
+	<div class="separator">&nbsp;</div>
 <% end %>
-</table>
+<%= link_to "Show my cart", '#' %>
