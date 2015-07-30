@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'store' => 'store#index'
-
+  get 'add_item_to_cart' => 'store#add_to_cart'
+  get 'display_cart' => 'store#display_cart'
   resources :products
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

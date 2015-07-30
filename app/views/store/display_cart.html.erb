@@ -1,0 +1,34 @@
+<div id="cartmenu">
+<ul>
+	<li><%= link_to 'Continue shopping' , store_path %></li>
+	<li><%= link_to ' Empty cart ' , '#' %></li>
+	<li><%= link_to ' Checkout ' , "#"%></li>
+</ul>
+</div>
+
+<table cellpadding="10" cellspacing="0">
+	<tr class="carttitle">
+		<td rowspan="2">Qty</td>
+		<td rowspan="2">Description</td>
+		<td colspan="2">Price</td>
+	</tr>
+	<tr class="carttitle">
+		<td>Each</td>
+		<td>Total</td>
+		</tr>
+	<%
+	@items.each do |i|
+	product = i['product_id']
+	-%>
+	<tr>
+		<td><%= i['quantity'] %></td>
+		<td><%= Product.title product %></td>
+		<td align="right"><%= i['unit_price'] %></td>
+		<td align="right"><%= i['unit_price'].to_i * i['quantity'].to_i %></td>
+	</tr>
+	<% end -%>
+	<tr>
+		<td colspan="3" align="right"><strong>Total:</strong></td>
+		<td id="totalcell"><%= @cart_total_price %></td>
+	</tr>
+</table>

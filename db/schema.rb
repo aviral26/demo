@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150727120228) do
+ActiveRecord::Schema.define(version: 20150728114045) do
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer  "quantity"
+    t.decimal  "unit_price"
+    t.integer  "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.string   "title"

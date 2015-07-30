@@ -8,7 +8,7 @@
 		</small>
 		<br/>
 		<strong>$<%= sprintf("%0.2f", product.price) %></strong>
-		<%= link_to 'Add to Cart', '#', :id => product %>
+		<%= link_to 'Add to Cart', {:action => "add_to_cart",:id => product}, :class => 'addtocart' %>
 		<br/>
 	</div>
 	<div class="separator">&nbsp;</div>

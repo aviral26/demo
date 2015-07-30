@@ -12,6 +12,9 @@ class Product < ActiveRecord::Base
 		Product.where("date_available <= ?", DateTime.now.to_s(:db))
 	end
 
+	def self.title(p_id)
+		Product.find_by(id: p_id).title
+	end
 
 
 	protected
